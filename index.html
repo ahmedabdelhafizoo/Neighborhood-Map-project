@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Neighborhood Map project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <section class="menu">
+        <input type="text" placeholder="Filter Locations" data-bind="value: filter, valueUpdate: 'afterkeydown'">
+        <ul class="nav navbar-nav" data-bind="foreach: filterAllMarkers">
+            <li data-bind="text: title, event:{click:$parent.selectedList}"></li>
+        </ul>
+    </section>
+    <div id="map" class="map"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+
+    <script src="js/main.js"></script>
+    
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3AQ9ROg3BxlaC3SdcicXJ2d4-f18mDSc&callback=initMap" onerror="googleError()"></script>
+</body>
+
+</html>
